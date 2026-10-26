@@ -459,6 +459,9 @@ fn main() -> std::process::ExitCode {
         // DesignCraft's own FontDb supplies script-specific system fallbacks; egui's system-font
         // provider would put its discovery ahead of that order and change line metrics.
         system_font_fallback: false,
+        // No-preferences and control-channel runs neither restore nor save the native window, so
+        // control-channel screenshots start from the same window every time.
+        persist_window: !no_prefs() && control_port.is_none(),
         ..Default::default()
     };
     options.viewport = options.viewport.with_app_id(APP_ID);
