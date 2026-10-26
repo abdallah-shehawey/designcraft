@@ -47,6 +47,11 @@ struct App {
 }
 
 impl eframe::App for App {
+    // App preferences already persist separately; only the native window belongs in eframe storage.
+    fn persist_egui_memory(&self) -> bool {
+        false
+    }
+
     fn logic(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         self.startup.enter();
         // Queue/deadline work only. A hidden `run_logic` tick also reports pass index zero, so
