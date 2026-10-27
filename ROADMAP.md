@@ -4,7 +4,7 @@
 - 2026-10-23: placed-artwork layer options survive IDML and native round trips per placement, independently of shared assets. Unsupported visibility overrides are explicit import/preflight/PDF warnings; format 4 prevents older native readers from silently discarding them. Rendering parity is still open; see [graphic-layer-options.md](docs/graphic-layer-options.md).
 - FID1: PDF export normalizes mixed emitted gradient color spaces to RGB with an explicit warning; homogeneous device-space gradients retain their components. Linear/radial, midpoint, archival and print policies have synthetic regression coverage.
 
-> **Last reviewed:** 2026-10-11 · **Last updated:** 2026-10-26 · **Change:** trivial (progress log: windows reopen at their last size or maximized at any interface size, storytold/egui#3) · **Target:** Adobe InDesign 2026
+> **Last reviewed:** 2026-10-11 · **Last updated:** 2026-10-27 · **Change:** trivial (progress log reconciled with upstream;  windows reopen at their last size or maximized at any interface size, storytold/egui#3) · **Target:** Adobe InDesign 2026
 - AR1.1: Kashida justification tests verify space fallback without Tatweel fonts using an isolated font database, while retaining elongation assertions when fonts support it.
 
 - AR1: Arabic IDML controls now retain character direction, kashida switches, diacritic offsets/forms, paragraph policy values and independent story/table directions. Shaping preserves joining context and script/language selection; paragraph-level bidi, contextual digit conversion, mark-safe elongation, RTL columns/tables and physical column insertion have regression coverage. Vendor-specific justification and diacritic presets remain explicit preflight warnings; see docs/arabic-typography.md.
@@ -380,6 +380,7 @@ list) · [roadmap.md](docs/roadmap.md) (milestones, plan) · [parity-checklist.m
 
 Newest first.
 
+- **2026-10-27** · An iconic panel's flyout stays open while you work in the canvas or a text field: Auto-Collapse Iconic Panels is off by default, and preferences saved with it on start with it off. Preferences › Interface › Panels holds the setting next to the column bar's menu item. No readiness percentage change.
 - **2026-10-26** · Windows reopen at their last size, or maximized, at any interface size (such as 150%), and Restore after a maximized restart returns to the last normal size. On GNOME Wayland, where the compositor draws no frame, a native Wayland window (`DESIGNCRAFT_WAYLAND=1`; by default DesignCraft opens through XWayland, where GNOME draws the frame) gets standard minimize, maximize and close buttons. Shared change: storytold/egui#3; checked on Linux only.
 - **2026-10-20** · Edit › Keyboard Shortcuts is craft-keymap's shared dialog: commands grouped by menu with Show and Filter, recording that asks before taking a key from another command, undo and redo, named shortcut sets (edits of Default become Custom; an imported set becomes a set of its own), an on-screen US keyboard, InDesign Show Set files reviewed before they apply, JSON export and an HTML summary. ui.json keeps the `shortcuts` map earlier versions read, for the active set. No readiness percentage change.
 - **2026-10-19** · Import InDesign Set… runs on craft-keymap's importer: a set's Window menu panel items (Layers F7, Pages F12, Swatches F5) and Tools items set the panel and tool shortcuts, all of an item's Default keys apply, and the report adds numeric keypad keys read as main keys and likely commands for unmatched items (`window.importShortcuts`). On InDesign's Windows defaults it matches 366 of 1,629 items (was 233) and changes 23 commands. No readiness percentage change.
@@ -723,6 +724,7 @@ Newest first.
 
 | Date | Change | Summary |
 |---|---|---|
+| 2026-10-27 | trivial | Reconcile the native-window progress entry with the independent iconic-panel preferences update; parity estimates unchanged |
 | 2026-10-26 | trivial | Progress log: windows reopen at their last size or maximized at any interface size; standard caption buttons on native GNOME Wayland windows, `DESIGNCRAFT_WAYLAND=1` (storytold/egui#3) |
 | 2026-10-12 | minor | Manual text threading landed; alpha distance 15–25 h → 5–7 h (Primary Text Frame page fixes, #165) |
 | 2026-10-11 | minor | Localized Japanese print, import and table controls; readiness estimates unchanged |
