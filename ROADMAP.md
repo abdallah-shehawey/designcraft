@@ -382,6 +382,8 @@ list) · [roadmap.md](docs/roadmap.md) (milestones, plan) · [parity-checklist.m
 
 Newest first.
 
+- 2026-10-27: Reconcile the current upstream modules and craft-libs `92d392c` while retaining the window-restoration egui pin `69750b7`; feature readiness estimates are unchanged.
+
 - **2026-10-27** · An iconic panel's flyout stays open while you work in the canvas or a text field: Auto-Collapse Iconic Panels is off by default, and preferences saved with it on start with it off. Preferences › Interface › Panels holds the setting next to the column bar's menu item. No readiness percentage change.
 - **2026-10-26** · Windows reopen at their last size, or maximized, at any interface size (such as 150%), and Restore after a maximized restart returns to the last normal size. On GNOME Wayland, where the compositor draws no frame, a native Wayland window (`DESIGNCRAFT_WAYLAND=1`; by default DesignCraft opens through XWayland, where GNOME draws the frame) gets standard minimize, maximize and close buttons. Shared change: storytold/egui#3; checked on Linux only.
 - **2026-10-20** · Edit › Keyboard Shortcuts is craft-keymap's shared dialog: commands grouped by menu with Show and Filter, recording that asks before taking a key from another command, undo and redo, named shortcut sets (edits of Default become Custom; an imported set becomes a set of its own), an on-screen US keyboard, InDesign Show Set files reviewed before they apply, JSON export and an HTML summary. ui.json keeps the `shortcuts` map earlier versions read, for the active set. No readiness percentage change.
@@ -726,6 +728,7 @@ Newest first.
 
 | Date | Change | Summary |
 |---|---|---|
+| 2026-10-27 | trivial | Reconcile the current upstream modules and craft-libs `92d392c` while retaining the window-restoration egui pin `69750b7`; feature readiness estimates are unchanged. |
 | 2026-10-27 | trivial | Reconcile the native-window progress entry with the independent iconic-panel preferences update; nine-step Linux CI passed, parity estimates unchanged |
 | 2026-10-26 | trivial | Progress log: windows reopen at their last size or maximized at any interface size; standard caption buttons on native GNOME Wayland windows, `DESIGNCRAFT_WAYLAND=1` (storytold/egui#3) |
 | 2026-10-12 | minor | Manual text threading landed; alpha distance 15–25 h → 5–7 h (Primary Text Frame page fixes, #165) |
